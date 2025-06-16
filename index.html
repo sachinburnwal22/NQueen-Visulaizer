@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>N-Queen Visualizer</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1>N-Queen Visualizer</h1>
+
+    <input id="boardSize" type="number" value="4" min="1" />
+    <button onclick="startSolving()">Start</button>
+
+    <div id="board" style="margin-top: 20px"></div>
+
+    <!-- Load WebAssembly -->
+    <script src="nqueen.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>

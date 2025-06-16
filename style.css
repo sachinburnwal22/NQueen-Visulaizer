@@ -1,0 +1,30 @@
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  padding: 20px;
+}
+
+#board {
+  display: grid;
+  margin: 20px auto;
+  width: fit-content;
+  gap: 2px;
+}
+
+.cell {
+  width: 40px;
+  height: 40px;
+  border: 1px solid black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 30px;
+}
+
+.cell:nth-child(even) {
+  background-color: #f0d9b5;
+}
+
+.cell:nth-child(odd) {
+  background-color: #b58863;
+}
