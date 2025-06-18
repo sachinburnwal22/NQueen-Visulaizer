@@ -5,16 +5,59 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>N-Queen Visualizer</title>
     <link rel="stylesheet" href="style.css" />
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+        margin-top: 30px;
+      }
+      #board {
+        display: inline-block;
+        margin-top: 20px;
+      }
+      .controls {
+        margin-top: 15px;
+      }
+      .controls > * {
+        margin: 5px;
+      }
+    </style>
   </head>
   <body>
     <h1>N-Queen Visualizer</h1>
 
-    <input id="boardSize" type="number" value="4" min="1" />
-    <button onclick="startSolving()">Start</button>
+    <!-- Input board size -->
+    <div class="controls">
+      <label for="boardSize">Board Size:</label>
+      <input id="boardSize" type="number" value="4" min="1" />
+      <button id="startButton">Start</button>
+    </div>
 
-    <div id="board" style="margin-top: 20px"></div>
+    <!-- Controls -->
+    <div class="controls">
+      <button id="playBtn">▶️ Play</button>
+      <button id="pauseBtn">⏸️ Pause</button>
+      <button id="backBtn">⬅️ Back</button>
+      <button id="forwardBtn">➡️ Forward</button>
+    </div>
 
-    <!-- Load WebAssembly -->
+    <!-- Speed slider -->
+    <div class="controls">
+      <label for="speed">Speed:</label>
+      <input
+        type="range"
+        id="speed"
+        min="100"
+        max="1000"
+        step="100"
+        value="500"
+      />
+    </div>
+
+    <!-- Board Display -->
+    <div id="board"></div>
+
+    <!-- Scripts -->
     <script src="nqueen.js"></script>
     <script src="script.js"></script>
   </body>
