@@ -131,3 +131,14 @@ function stepBackward() {
     drawBoard();
   }
 }
+
+document.getElementById("showLogicBtn").addEventListener("click", function () {
+  const logicBox = document.getElementById("logicBox");
+  if (logicBox.style.display === "none") {
+    logicBox.style.display = "block";
+    this.textContent = "❌ Hide Logic";
+  } else {
+    logicBox.style.display = "none";
+    this.textContent = "💡 Show Logic";
+  }
+});

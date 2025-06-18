@@ -1,30 +1,160 @@
+/* ======= Body Background Animation ======= */
 body {
-  font-family: Arial, sans-serif;
-  text-align: center;
-  padding: 20px;
+  margin: 0;
+  font-family: "Segoe UI", sans-serif;
+  background: linear-gradient(-45deg, #4facfe, #00f2fe, #43e97b, #38f9d7);
+  background-size: 400% 400%;
+  animation: gradientBG 15s ease infinite;
+  color: #333;
 }
 
+/* ======= Gradient Animation ======= */
+@keyframes gradientBG {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.board-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+/* ======= Header ======= */
+header {
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  padding: 1rem;
+  text-align: center;
+  font-size: 2rem;
+  backdrop-filter: blur(5px);
+  border-bottom: 2px solid white;
+}
+
+/* ======= Card Container (Glass UI) ======= */
+.container {
+  max-width: 600px;
+  margin: 40px auto;
+  padding: 25px;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(15px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+/* ======= Controls ======= */
+.controls {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+  margin: 15px 0;
+}
+
+.controls input,
+.controls button,
+.controls select {
+  padding: 10px;
+  font-size: 1rem;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.controls button {
+  background: #007bff;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0, 123, 255, 0.3);
+}
+
+.controls button:hover {
+  transform: translateY(-2px);
+  background: #0056b3;
+}
+
+input[type="range"] {
+  width: 200px;
+}
+
+/* ======= Chessboard ======= */
 #board {
-  display: grid;
+  display: inline-block;
+  margin-top: 20px;
+  border: 2px solid #222;
+  /* Add this for centering */
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+}
+
+#logicBox {
+  background: rgba(255, 255, 255, 0.95);
+  padding: 20px;
+  border-radius: 10px;
+  max-width: 90%;
   margin: 20px auto;
-  width: fit-content;
-  gap: 2px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  overflow-x: auto;
+}
+
+#cppCode {
+  background-color: #1e1e1e;
+  color: #dcdcdc;
+  padding: 15px;
+  border-radius: 10px;
+  font-family: "Consolas", "Courier New", monospace;
+  font-size: 0.95rem;
+  white-space: pre-wrap;
+  word-wrap: break-word;
 }
 
 .cell {
-  width: 40px;
-  height: 40px;
-  border: 1px solid black;
+  width: 8vw;
+  height: 8vw;
+  max-width: 50px;
+  max-height: 50px;
+  font-size: 1.8rem;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 30px;
+  box-sizing: border-box;
 }
 
-.cell:nth-child(even) {
-  background-color: #f0d9b5;
+.row {
+  display: flex;
 }
 
-.cell:nth-child(odd) {
-  background-color: #b58863;
+/* ======= Media Query for Small Devices ======= */
+@media (max-width: 600px) {
+  .cell {
+    width: 12vw;
+    height: 12vw;
+    font-size: 1.4rem;
+  }
+
+  header {
+    font-size: 1.5rem;
+  }
+
+  .controls input,
+  .controls button {
+    font-size: 0.9rem;
+    padding: 8px;
+  }
+
+  input[type="range"] {
+    width: 150px;
+  }
 }
