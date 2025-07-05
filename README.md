@@ -12,7 +12,8 @@ A visual and interactive tool to understand and explore the N-Queens problem—o
 
 ## Demo
 
-> _Include a GIF or screenshot here if possible._
+![image](https://github.com/user-attachments/assets/bc290784-453d-41e0-93cb-d479b1edd8f4)
+
 
 ## What is the N-Queens Problem?
 
